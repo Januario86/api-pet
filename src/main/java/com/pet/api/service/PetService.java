@@ -18,9 +18,9 @@ public class PetService {
         return petsRepository.findAll();
     }
 
-//    public List<Pet> buscarPorClienteId(Long clienteId) {
-//        return petsRepository.findByClienteId(clienteId);
-//    }
+    public List<Pet> buscarPorClienteId(Long clienteId) {
+        return petsRepository.findByClienteId(clienteId);
+    }
 
     public Pet salvar(Pet pet) {
         return petsRepository.save(pet);

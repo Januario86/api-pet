@@ -3,7 +3,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,9 +19,6 @@ public class ClienteService {
 	    @Autowired
 	    private ClienteRepository clienteRepository;
 	    
-	    @Autowired
-	    private ModelMapper modelMapper;
-
 	    public List<Cliente> listarTodos() {
 	        List<Cliente> clientes = clienteRepository.findAll();
 	        	        
@@ -42,9 +38,14 @@ public class ClienteService {
 	    }
 	    
 	    @Transactional
-	    public Cliente salvar(ClienteDTO clienteDTO) {
-	    	 Cliente cliente = modelMapper.map(clienteDTO, Cliente.class);
-	         return clienteRepository.save(cliente);
+	    public ClienteDTO salvar(ClienteDTO clienteDTO) {
+	    	 
+	    	Cliente cliente = new Cliente();
+	    	    cliente.setNome(clienteDTO.nome());	    	  
+	    	    cliente.setCpf(clienteDTO.cpf());
+	    	 Cliente  clienteSalvo =  clienteRepository.save(cliente);
+	    	 
+	    	 return new ClienteDTO(clienteSalvo.getId(), clienteSalvo.getNome(), clienteSalvo.getCpf());
 	    }
 
 	    public void deletar(Long id) {

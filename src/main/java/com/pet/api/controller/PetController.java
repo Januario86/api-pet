@@ -27,10 +27,10 @@ public class PetController {
         return petService.listarTodos();
     }
 
-//    @GetMapping("/cliente/{clienteId}")
-//    public List<Pet> buscarPorCliente(@PathVariable Long clienteId) {
-//        return petService.buscarPorClienteId(clienteId);
-//    }
+    @GetMapping("/cliente/{clienteId}")
+    public List<Pet> buscarPorCliente(@PathVariable Long clienteId) {
+        return petService.buscarPorClienteId(clienteId);
+    }
 
     @PostMapping
     public Pet salvar(@RequestBody Pet pet) {

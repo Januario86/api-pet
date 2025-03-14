@@ -18,9 +18,9 @@ public class AtendimentoService {
         return atendimentoRepository.findAll();
     }
 
-//    public List<Atendimento> buscarPorPetId(Long petId) {
-//        return atendimentoRepository.findByPetsId(petId);
-//    }
+    public List<Atendimento> buscarPorPetId(Long petId) {
+        return atendimentoRepository.findByPetsId(petId);
+    }
 
     public Atendimento salvar(Atendimento atendimento) {
         return atendimentoRepository.save(atendimento);

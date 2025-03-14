@@ -9,5 +9,5 @@ import com.pet.api.model.Atendimento;
 
 @Repository
 public interface AtendimentoRepository extends JpaRepository<Atendimento, Long> {
-   // List<Atendimento> findByPetsId(Long petId);
+   List<Atendimento> findByPetsId(Long petId);
 }

@@ -28,9 +28,9 @@ public class AtendimentoController {
 	    }
 
 	    @GetMapping("/pet/{petId}")
-//	    public List<Atendimento> buscarPorPet(@PathVariable Long petId) {
-//	        return atendimentoService.buscarPorPetId(petId);
-//	    }
+	    public List<Atendimento> buscarPorPet(@PathVariable Long petId) {
+	        return atendimentoService.buscarPorPetId(petId);
+	    }
 
 	    @PostMapping
 	    public Atendimento salvar(@RequestBody Atendimento atendimento) {
