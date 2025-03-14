@@ -14,9 +14,9 @@ public class UsuarioService {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-//    public Optional<Usuario> buscarPorCpf(String cpf) {
-//        return usuarioRepository.findByCpf(cpf);
-//    }
+    public Optional<Usuario> buscarPorCpf(String cpf) {
+        return usuarioRepository.findByCpf(cpf);
+    }
 
     public Usuario salvar(Usuario usuario) {
         return usuarioRepository.save(usuario);
