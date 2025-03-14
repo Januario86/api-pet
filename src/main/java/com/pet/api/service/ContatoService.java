@@ -18,9 +18,9 @@ public class ContatoService {
         return contatoRepository.findAll();
     }
 
-//    public List<Contato> buscarPorClienteId(Long clienteId) {
-//        return contatoRepository.findByClienteId(clienteId);
-//    }
+    public List<Contato> buscarPorClienteId(Long clienteId) {
+        return contatoRepository.findByClienteId(clienteId);
+    }
 
     public Contato salvar(Contato contato) {
         return contatoRepository.save(contato);
