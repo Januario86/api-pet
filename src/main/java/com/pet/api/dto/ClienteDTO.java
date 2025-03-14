@@ -1,5 +1,15 @@
 package com.pet.api.dto;
 
-public record ClienteDTO(String nome, String cpf) {
+import org.hibernate.validator.constraints.br.CPF;
 
-}
+import jakarta.validation.constraints.NotBlank;
+
+public record ClienteDTO(
+		
+		@NotBlank(message = "O nome é obrigatório") 
+		String nome,
+
+		@CPF(message = "CPF inválido") 
+		String cpf
+		) 
+{}
