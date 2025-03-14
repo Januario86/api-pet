@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.pet.api.dto.ClienteDTO;
 import com.pet.api.model.Cliente;
 import com.pet.api.service.ClienteService;
 
@@ -21,7 +22,7 @@ public class ClienteController {
 	
 	@Autowired
 	private ClienteService clienteService;
-	
+
 	@GetMapping
 	public List<Cliente> listarClientes() {
 	    return clienteService.listarTodos();
@@ -34,8 +35,8 @@ public class ClienteController {
     }
 
     @PostMapping
-    public Cliente salvar(@RequestBody Cliente cliente) {
-        return clienteService.salvar(cliente);
+    public Cliente salvar(@RequestBody ClienteDTO clienteDTO) {
+        return clienteService.salvar(clienteDTO);
     }
 
     @DeleteMapping("/{id}")
