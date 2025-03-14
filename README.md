@@ -25,7 +25,7 @@ Este é um sistema RESTful desenvolvido com **Spring Boot** para gerenciar atend
 Certifique-se de ter um banco de dados PostgreSQL rodando e configure as credenciais no `application.properties`:
 
 ```properties
-spring.datasource.url=jdbc:postgresql://localhost:5432/petshop
+spring.datasource.url=jdbc:postgresql://localhost:5432/petshopdb
 spring.datasource.username=postgres
 spring.datasource.password=admin
 spring.datasource.driver-class-name=org.postgresql.Driver
